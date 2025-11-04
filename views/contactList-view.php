@@ -16,6 +16,8 @@
         </nav>
         <div class="container">
             <a href="contactAddController.php" class="btn btn-primary">Add Contact</a>
+            <a href="contactDeleteController.php" class="btn btn-primary">Delete Contact</a>
+            <a href="contactUpdateController.php" class="btn btn-primary">Update Contact</a>
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>

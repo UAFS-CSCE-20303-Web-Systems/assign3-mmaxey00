@@ -12,6 +12,24 @@
             return $mysqli;
         }
 
+        public function updateContact($contactID){
+            $connection=$this->getConnection();
+            $stmt = $connection->prepare("SELECT FROM contacts WHERE contactID = ?");
+            $stmt->bind_param("ss", $contactID);
+            $stmt->execute();
+            $stmt->close();
+            $connection->close();
+        }
+
+        public function deleteContact($contactID){
+            $connection=$this->getConnection();
+            $stmt = $connection->prepare("DELETE FROM contacts WHERE contactID = ?");
+            $stmt->bind_param("ss", $contactID);
+            $stmt->execute();
+            $stmt->close();
+            $connection->close();
+        }
+
         public function addContact($contact){
             $connection=$this->getConnection();
             $stmt = $connection->prepare("INSERT INTO contacts (username, email) VALUES (?, ?)");
